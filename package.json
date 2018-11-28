@@ -2,7 +2,7 @@
   "name": "chart-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cnmetro.github.io/chart-website/",
+  "homepage": "http://flows-chart.sinchang.me",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.6.3",

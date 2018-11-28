@@ -46,7 +46,8 @@ class App extends Component {
   render() {
     return (
       <div className="app container">
-        <h2>Shanghai/Beijing/Guangzhou Metro Passenger Flow Chart<span className="tip-text">(unit: Ten thousand)</span></h2>
+        <h2>Shanghai/Beijing/Guangzhou Metro Passenger Flow Chart</h2>
+        <p className="tip-text">(unit: Ten thousand)</p>
         <select className="custom-select range-select">
           <option value="1">The last 30 days</option>
         </select>
