@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/cnmetro/chart-website/precache-manifest.5998968af9af342ecd42a6470f4e2a4e.js"
+  "/chart-website/precache-manifest.2673e004e36ea2817fe01fa32bc61407.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/cnmetro/chart-website/index.html", {
+workbox.routing.registerNavigationRoute("/chart-website/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
