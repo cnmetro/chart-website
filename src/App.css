@@ -1,11 +1,6 @@
 .app {
   text-align: center;
-  margin: 20px auto;
-}
-
-.range-select {
-  max-width: 200px;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
 .recharts-wrapper {
@@ -13,6 +8,7 @@
 }
 
 .tip-text {
+  padding-top: 20px;
   font-size: 14px;
   color: #666666;
 }
