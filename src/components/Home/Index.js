@@ -46,7 +46,7 @@ class Home extends Component {
   render() {
     return (
       <div className="">
-        <LineChart width={800} height={400} data={this.state.data}
+        <LineChart width={1000} height={500} data={this.state.data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <XAxis dataKey="date" />
           <YAxis />

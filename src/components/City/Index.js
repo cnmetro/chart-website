@@ -58,7 +58,7 @@ class City extends Component {
           <option value="year=2016">2016 Year</option>
           <option value="year=2015">2015 Year</option>
         </select>
-        <LineChart width={800} height={400} data={this.state.data}
+        <LineChart width={1000} height={500} data={this.state.data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <XAxis dataKey="date" />
           <YAxis />
