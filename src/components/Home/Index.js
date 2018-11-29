@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import './Index.css';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import React, { Component } from 'react'
+import axios from 'axios'
+import './Index.css'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 
 
 class Home extends Component {
@@ -58,8 +58,8 @@ class Home extends Component {
           <Line type="monotone" dataKey="Guangzhou" stroke="#1281ca" />
         </LineChart>
       </div>
-    );
+    )
   }
 }
 
-export default Home;
+export default Home

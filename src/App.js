@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
-import './App.css';
-import logo from './assets/logo.svg';
-import Home from './components/Home/Index';
-import City from './components/City/Index';
-import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
+import React, { Component } from 'react'
+import './App.css'
+import logo from './assets/logo.svg'
+import Home from './components/Home/Index'
+import City from './components/City/Index'
+import { HashRouter as Router, Route, NavLink } from 'react-router-dom'
 
 class App extends Component {
-  activeEvent(match) {
-    if (!match) return false;
+  activeEvent(match, location) {
+    if (!match) return false
+
+    if (match.url === location.pathname) return true
   }
 
   render() {
@@ -32,11 +34,11 @@ class App extends Component {
         </nav>
         <p className="tip-text">(unit: Ten thousand)</p>
         <Route exact path="/" component={Home} />
-        <Route path="/city/:name" component={City} />
+        <Route exact path="/city/:name" component={City} />
       </div>
       </Router>
-    );
+    )
   }
 }
 
-export default App;
+export default App
