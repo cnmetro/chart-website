@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import startOfYesterday from 'date-fns/start_of_yesterday'
+import subDays from 'date-fns/sub_days'
+import format from 'date-fns/format'
 import './Index.css'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 
@@ -23,12 +26,28 @@ class Home extends Component {
     ])
   }
 
+  lastThirtyDays() {
+    return [...new Array(30)].map((i, idx) => format(subDays(startOfYesterday(), idx), 'YYYY-MM-DD'));
+  }
+
+  getDayNum(arr, date) {
+    let num = 0
+    arr.forEach(v => {
+      if (v.date === date) num = v.num
+    })
+
+    return num
+  }
+
   formatData(dataArr) {
-    const city = ['Shanghai', 'Beijing', 'Guangzhou']
-    const data = JSON.parse(JSON.stringify(dataArr[0].data))
-    dataArr.forEach((v1, i1) => {
-      v1.data.forEach((v2, i2) => {
-        data[i2][city[i1]] = v2.num
+    const data = []
+
+    this.lastThirtyDays().forEach(date => {
+      data.push({
+        date,
+        'Shanghai': this.getDayNum(dataArr[0].data, date),
+        'Beijing': this.getDayNum(dataArr[1].data, date),
+        'Guangzhou': this.getDayNum(dataArr[2].data, date)
       })
     })
 
