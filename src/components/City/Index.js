@@ -53,6 +53,7 @@ class City extends Component {
         <select className="form-control type-select" value={this.state.query} onChange={this.handleChange}>
           <option value="count=30">The last 30 Day</option>
           <option value="count=10&sort=desc">Top10</option>
+          <option value="year=2019">2019 Year</option>
           <option value="year=2018">2018 Year</option>
           <option value="year=2017">2017 Year</option>
           <option value="year=2016">2016 Year</option>
