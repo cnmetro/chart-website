@@ -12,7 +12,8 @@ class City extends Component {
   state = {
     name: '',
     query: 'count=30',
-    data: []
+    data: [],
+    sortedData: []
   }
 
   handleChange = event => {
@@ -27,12 +28,20 @@ class City extends Component {
   componentDidMount() {
     const { name } = this.props.match.params
     this.fetchData(name)
+    this.request('sort=desc', name)
+      .then(res => {
+        this.setState({ sortedData: res.data})
+      })
   }
 
   componentWillReceiveProps(nextProps) {
     const { name } = nextProps.match.params
     if (name === this.state.name) return
     this.fetchData(name)
+    this.request('sort=desc', name)
+      .then(res => {
+        this.setState({ sortedData: res.data})
+      })
   }
 
   fetchData(name, query) {
@@ -48,6 +57,8 @@ class City extends Component {
   }
 
   render() {
+    const highest = this.state.sortedData[0]
+    const lowest = this.state.sortedData[this.state.sortedData.length - 1]
     return (
       <div>
         <select className="form-control type-select" value={this.state.query} onChange={this.handleChange}>
@@ -68,6 +79,9 @@ class City extends Component {
           <Legend />
           <Line type="monotone" dataKey="num" stroke={COLOR_VAR[this.state.name]} />
         </LineChart>
+        <div>
+        { highest && <span>Highest: {highest.num} in {highest.date}</span> } | { lowest && <span>Lowest: {lowest.num} in {lowest.date}</span> }
+        </div>
       </div>
     )
   }
