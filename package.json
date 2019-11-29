@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://flows-chart.sinchang.me",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "date-fns": "^1.29.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
