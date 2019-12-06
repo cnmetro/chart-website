@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import startOfYesterday from 'date-fns/start_of_yesterday'
-import subDays from 'date-fns/sub_days'
+import startOfYesterday from 'date-fns/startOfYesterday'
+import subDays from 'date-fns/subDays'
 import format from 'date-fns/format'
 import './Index.css'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
@@ -27,7 +27,7 @@ class Home extends Component {
   }
 
   lastThirtyDays() {
-    return [...new Array(30)].map((i, idx) => format(subDays(startOfYesterday(), idx), 'YYYY-MM-DD'));
+    return [...new Array(30)].map((i, idx) => format(subDays(startOfYesterday(), idx), 'yyyy-MM-dd'));
   }
 
   getDayNum(arr, date) {
