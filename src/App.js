@@ -15,27 +15,33 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="app">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="/">
-            <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="logo" />
-          </a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-              <NavLink className="nav-item nav-link" to="/" activeClassName="active" isActive={this.activeEvent}>Home</NavLink>
-              <NavLink className="nav-item nav-link" to="/city/sh" activeClassName="active">Shanghai</NavLink>
-              <NavLink className="nav-item nav-link" to="/city/bj" activeClassName="active">Beijing</NavLink>
-              <NavLink className="nav-item nav-link" to="/city/gz" activeClassName="active">Guangzhou</NavLink>
+        <div className="app">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand" href="/">
+              <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="logo" />
+            </a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="navbar-nav">
+                <NavLink className="nav-item nav-link" to="/" activeClassName="active" isActive={this.activeEvent}>Home</NavLink>
+                <NavLink className="nav-item nav-link" to="/city/sh" activeClassName="active">Shanghai</NavLink>
+                <NavLink className="nav-item nav-link" to="/city/bj" activeClassName="active">Beijing</NavLink>
+                <NavLink className="nav-item nav-link" to="/city/gz" activeClassName="active">Guangzhou</NavLink>
+              </div>
             </div>
-          </div>
-        </nav>
-        <p className="tip-text">(unit: Ten thousand)</p>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/city/:name" component={City} />
-      </div>
+          </nav>
+          <p className="tip-text">(unit: Ten thousand)</p>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/city/:name" component={City} />
+          <p align="center" className="sponsor">
+            <h3>Sponsor</h3>
+            <a href="https://www.jetbrains.com/?from=cnmetro">
+              <img src="https://www.jetbrains.com/company/brand/img/jetbrains_logo.png" width="128" alt="JetBrains logo" />
+            </a>
+          </p>
+        </div>
       </Router>
     )
   }
